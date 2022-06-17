@@ -1,0 +1,47 @@
+version: 0.0
+os: linux
+files:
+  - source: / # 배포할 디렉토리 또는 파일 (여기서는 모든 디렉토리)
+    destination: /home/ubuntu/practice # 배포할 위치 (여기서는 ec2경로)
+hooks:
+  BeforeInstall:
+    - location: Scripts/UnzipResourceBundle.sh
+    - location: Scripts/UnzipDataBundle.sh
+  AfterInstall:
+    - location: Scripts/RunResourceTests.sh
+      timeout: 180
+  ApplicationStart:
+    - location: Scripts/RunFunctionalTests.sh
+      timeout: 3600
+  ValidateService:
+    - location: Scripts/MonitorService.sh
+      timeout: 3600
+      runas: codedeployuser
+# hooks event 종류 ()
+#   Start
+#   lifecycle의 첫 번째 이벤트로, CodeDeploy 에이전트를 자동으로 실행하고 인스턴스 배포가 시작된다.
+#
+#   ApplicationStop
+#   이전 프로그램을 중지하는 스크립트를 실행하는 단계이다.
+#   예를 들어 커머스 웹 어플리케이션을 운영하고 있는데 새 버전(v.1)을 배포할 경우 이 이벤트를 통해 구 버전(v.0)을 사용하지 않도록 설정하고 새 버전(v.1)을 수신하도록 인스턴스를 준비할 수 있다.
+#
+#   DownloadBundle
+#   이 이벤트 동안 CodeDeploy에이전트는 새 버전을 인스턴스로 가져온다.(ex CodeBuild에서 패키징된 zip 파일)
+#
+#   BeforeInstall
+#   이 이벤트를 통해 구버전의 설치 구성을 저장하고, 파일을 복호화하고, 현재 버전의 백업을 만들 수 있다.
+#
+#   Install
+#   DownloadBundle을 통해 가져온 Bundle의 압축을 해제하고 appspec.yml에 정의된대로 파일을 지정한 경로로 복사한다.
+#
+#   AfterInstall
+#   이 이벤트를 통해 프로그램이 시작되기 전에 프로그램의 구성을 변경할 수 있다.
+#
+#   ApplicationStart
+#   이름에서 알 수 있듯이 어플리케이션을 구 버전(v.0) 대신 새 버전(v.1)로 설정한다.
+#
+#   ValidateService
+#   이 이벤트를 통해 배포가 성공했는지 확인할 수 있는 검증 로직을 실행할 수 있다.
+#
+#   End
+#   lifecycle의 마지막 이벤트로, 인스턴스의 배포 성공유무를 중앙 서비스에 알린다.
