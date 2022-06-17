@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /home/ubuntu/practice/deploy_practice/server
+cd /home/ubuntu/deploy_practice/server
 
 sudo apt-get update
 sudo npm install
