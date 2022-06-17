@@ -4,19 +4,15 @@ files:
   - source: / # 배포할 디렉토리 또는 파일 (여기서는 모든 디렉토리)
     destination: /home/ubuntu/practice # 배포할 위치 (여기서는 ec2경로)
 hooks:
-  BeforeInstall:
-    - location: Scripts/UnzipResourceBundle.sh
-    - location: Scripts/UnzipDataBundle.sh
+  ApplicationStop:
+    - location: scripts/stop.sh
+      runas: root
   AfterInstall:
-    - location: Scripts/RunResourceTests.sh
-      timeout: 180
+    - location: scripts/initialize.sh
+      runas: root
   ApplicationStart:
-    - location: Scripts/RunFunctionalTests.sh
-      timeout: 3600
-  ValidateService:
-    - location: Scripts/MonitorService.sh
-      timeout: 3600
-      runas: codedeployuser
+    - location: scripts/start.sh
+      runas: root
 # hooks event 종류 ()
 #   Start
 #   lifecycle의 첫 번째 이벤트로, CodeDeploy 에이전트를 자동으로 실행하고 인스턴스 배포가 시작된다.
