@@ -2,4 +2,4 @@
 
 cd /home/ubuntu/deploy_practice/server
 
-sudo pm2 start bin/www.js
+authbind --deep pm2 start bin/www.js
