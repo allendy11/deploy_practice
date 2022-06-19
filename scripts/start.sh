@@ -2,4 +2,5 @@
 
 cd /home/ubuntu/deploy_practice/server
 
-sudo pm2 start bin/www.js
+sudo npm start bin/www.js
+# sudo pm2 start bin/www.js
