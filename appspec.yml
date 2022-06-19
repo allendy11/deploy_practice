@@ -4,7 +4,8 @@ files:
   - source: /
     destination: /home/ubuntu/deploy_practice
 hooks:
-  BeforeInstall: scripts/initialize.sh
+  BeforeInstall:
+    - location: scripts/initialize.sh
   AfterInstall:
     - location: scripts/install.sh
   ApplicationStart:
