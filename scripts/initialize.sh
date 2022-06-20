@@ -1,4 +1,7 @@
 #!/bin/sh
+sudo apt update
+sudo apt install nvm
+nvm install --lts
 cd /home/ubuntu/deploy_practice/server
 npm install
 npm install pm2@latest -g
