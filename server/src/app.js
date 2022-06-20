@@ -14,6 +14,6 @@ app.use("/", (req, res) => {
   res.status(200).json("work");
 });
 
-app.listen(8000, () => {
-  console.log("listen on 8000");
+app.listen(3000, () => {
+  console.log("listen on 3000");
 });
