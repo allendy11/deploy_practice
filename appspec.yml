@@ -6,3 +6,5 @@ files:
 hooks:
   AfterInstall:
     - location: scripts/initialize.sh
+  ApplicationStart:
+    - location: scripts/start.sh
