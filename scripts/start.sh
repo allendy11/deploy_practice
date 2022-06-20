@@ -1,5 +1,5 @@
 #!/bin/sh
-cd /home/ubuntu/deploy_practice/server
+cd /home/ubuntu/deploy_practice/serverts
 
 
 cd bin
