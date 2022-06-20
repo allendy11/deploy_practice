@@ -1,6 +1,3 @@
 #!/bin/sh
-cd /home/ubuntu/deploy_practice/serverts
-
-
-cd bin
-authbind --deep pm2 start www
+cd /home/ubuntu/deploy_practice/server
+authbind --deep pm2 start src/app.js
