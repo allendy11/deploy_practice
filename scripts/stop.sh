@@ -1,6 +1,4 @@
-#!/bin/sh
-
-cd /home/ubuntu/deploy_practice/server
-
-pm2 stop bin/www 2> /dev/null || true
-pm2 delete bin/www 2> /dev/null || true
+#!/bin/bash
+cd /home/ubuntu/deploy_practice/server/bin
+sudo pm2 stop www.js 2> /dev/null || true
+sudo pm2 delete www.js 2> /dev/null || true
