@@ -1,3 +1,4 @@
 #!/bin/sh
 cd /home/ubuntu/deploy_practice/server
-authbind --deep pm2 start app.js
+pm2 status
+# authbind --deep pm2 start app.js
