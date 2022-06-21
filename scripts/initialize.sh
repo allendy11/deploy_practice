@@ -2,7 +2,7 @@
 
 cd /home/ubuntu/deploy_practice/server
 sudo apt-get update
-sudo apt-get install nodejs
+sudo apt-get install nodejs -y
 
 # sudo npm install
 # sudo npm install pm2@latest -g
