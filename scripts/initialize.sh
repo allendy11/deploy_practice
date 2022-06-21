@@ -2,6 +2,10 @@
 
 cd /home/ubuntu/deploy_practice/server
 
+sudo apt update
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.36.0/install.sh | bash
+source ~/.bashrc
+nvm install --lts
 sudo npm install
 sudo npm install pm2@latest -g
 sudo apt-get update
