@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cd /home/ubuntu/deploy_practice/server
+cd /home/ubuntu/deploy_practice/serverd
 # sudo apt update
 # sudo npm install
 # sudo npm install pm2@latest -g
