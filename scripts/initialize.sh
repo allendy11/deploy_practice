@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sudo apt-get update
-sudo apt-get install nodejs -g -y
+sudo apt-get install nodejs -y
 cd /home/ubuntu/deploy_practice/server
 npm install
 
