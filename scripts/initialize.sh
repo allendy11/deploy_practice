@@ -2,7 +2,7 @@
 
 sudo apt-get update
 cd /home/ubuntu/deploy_practice/server
-sudo npm install
+npm install
 
 
 # sudo apt-get update
