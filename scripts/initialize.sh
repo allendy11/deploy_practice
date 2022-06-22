@@ -2,7 +2,7 @@
 
 cd /home/ubuntu/deploy_practice/server
 sudo apt-get update
-sudo apt-get install npm
+sudo apt-get install npm -y
 npm install
 
 
