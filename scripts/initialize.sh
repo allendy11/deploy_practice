@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sudo apt update
+sudo apt-get update
 cd /home/ubuntu/deploy_practice/server
 sudo npm install
 
