@@ -11,7 +11,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/", (req, res) => {
-  res.status(200).json("work");
+  res.status(200).json("hello");
 });
 
 app.listen(8080, () => {
